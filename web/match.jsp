@@ -35,7 +35,7 @@
         <div id="content">
             <div class="post" >
                 <form method="post" action="/TomcatTest/UploadServlet" enctype="multipart/form-data">
-                    <h3 class="post-title">submit a .tsv file:
+                    <h3 class="post-title">Submit a .tsv file:
                     <input type="file" name="uploadFile"/>
                     <br/><br/>
                         <input type="submit" value="submit" class="more-link"/></h3>
