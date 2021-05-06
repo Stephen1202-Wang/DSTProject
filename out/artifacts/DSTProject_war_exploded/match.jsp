@@ -21,6 +21,9 @@
             <ul class="menu">
                 <li><a href="continue.do">Home</a></li>
                 <li class="current_page_item"><a href="match.jsp">Matching</a></li>
+                <ul class="sub-menu">
+                    <li><a href="record.jsp">record</a></li>
+                </ul>
                 <li><a href="drug.jsp">Drugs</a></li>
                 <li><a href="druglabel.jsp">Drug labels</a></li>
                 <li><a href="dosage.jsp">Dosing Guideline</a></li>
@@ -31,6 +34,12 @@
     <div id="main">
         <div id="content">
             <div class="post" >
+                <form method="post" action="/TomcatTest/UploadServlet" enctype="multipart/form-data">
+                    <h3>submit a .tsv file:
+                    <input type="file" name="uploadFile" />
+                    <br/><br/>
+                        <input type="submit" value="上传" /></h3>
+                </form>
                 <h3 class="post-title"><a href="#">${message}</a></h3>
             </div>
         </div>
