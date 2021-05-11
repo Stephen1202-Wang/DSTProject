@@ -13,6 +13,8 @@
     <script src="static/js/ie6-transparency.js"></script>
     <script>DD_belatedPNG.fix('#header img, #featured-section h2, #circles img, #frontpage-sidebar .read-more, .blue-bullets li, #sidebar .sidebar-button, #project-content .read-more, .more-link, #contact-form .submit, .jcarousel-skin-tango .jcarousel-next-horizontal, .jcarousel-skin-tango .jcarousel-prev-horizontal, #commentform .submit');</script>
     <style>body { behavior: url("static/css/ie6-hover-fix.htc"); }</style>
+    <script src="<%=request.getContextPath()%>/static/js/jquery-3.4.1.js"></script>
+    <script src="<%=request.getContextPath()%>/static/js/bootstrap.bundle.min.js"></script>
     <title>Precision Medicine Matching System</title>
 </head>
 <body class="page">
@@ -35,33 +37,26 @@
     <div class="page-headline">Drugs</div>
     <div id="main">
         <div id="content">
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Drug Url</th>
+                    <th>Biomarker</th>
+                </tr>
+                <c:forEach items="${drugs}" var="item">
                     <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Drug Url</th>
-                        <th>Biomarker</th>
+                        <td>${item.id}</td>
+                        <td>${item.name}</td>
+                        <td>${item.drugUrl}</td>
+                        <td>${item.biomarker}</td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${drugs}" var="item">
-                        <tr>
-                            <td>${item.id}</td>
-                            <td>${item.name}</td>
-                            <td>${item.drugUrl}</td>
-                            <td>${item.biomarker}</td>
-                        </tr>
-                    </c:forEach>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="post" >
-                <h3 class="post-title"><a href="#">${message}</a></h3>
-            </div>
+                </c:forEach>
+            </table>
         </div>
+    </div>
+    <div class="post" >
+        <h3 class="post-title"><a href="#">${message}</a></h3>
     </div>
 </div>
 </body>

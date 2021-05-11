@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html>
 <head>
     <link rel="stylesheet" href="static/css/style.css" type="text/css"/>
@@ -34,6 +35,22 @@
     <div class="page-headline">Drug Labels</div>
     <div id="main">
         <div id="content">
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Source</th>
+                    <th>Dosing Information</th>
+                    <th>Summary Markdown</th>
+                </tr>
+                <c:forEach items="${drugLabels}" var="item">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.source}</td>
+                        <td>${item.dosingInformation}</td>
+                        <td>${item.summaryMarkdown}</td>
+                    </tr>
+                </c:forEach>
+            </table>
             <div class="post" >
                 <h3 class="post-title"><a href="#">${message}</a></h3>
             </div>
