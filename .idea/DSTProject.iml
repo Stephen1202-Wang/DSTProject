@@ -33,5 +33,10 @@
     <orderEntry type="library" exported="" name="Spring Security-5.2.1" level="project" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" exported="" name="slf4j-api-1.7.9" level="project" />
+    <orderEntry type="library" exported="" name="jstl" level="project" />
+    <orderEntry type="library" exported="" name="standard" level="project" />
+    <orderEntry type="library" exported="" name="taglibs-standard-jstlel-1.2.5" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
+    <orderEntry type="library" exported="" name="slf4j-api-1.7.9-sources" level="project" />
   </component>
 </module>

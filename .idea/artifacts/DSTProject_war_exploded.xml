@@ -16,6 +16,12 @@
           <element id="library" level="project" name="Spring Web Services-2.0.2" />
           <element id="library" level="project" name="Spring Data JPA-2.2.4.RELEASE" />
           <element id="library" level="project" name="Spring Security-5.2.1" />
+          <element id="library" level="project" name="slf4j-api-1.7.9" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="standard" />
+          <element id="library" level="project" name="taglibs-standard-jstlel-1.2.5" />
+          <element id="library" level="project" name="gson-2.8.0" />
+          <element id="library" level="project" name="slf4j-api-1.7.9-sources" />
         </element>
       </element>
     </root>

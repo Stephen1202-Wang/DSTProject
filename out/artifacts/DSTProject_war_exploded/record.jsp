@@ -31,7 +31,7 @@
             </ul>
         </div>
     </div>
-    <div class="page-headline">Matching</div>
+    <div class="page-headline">Record</div>
     <div id="main">
         <div id="content">
             <div class="post" >
