@@ -22,6 +22,7 @@
           <element id="library" level="project" name="taglibs-standard-jstlel-1.2.5" />
           <element id="library" level="project" name="gson-2.8.0" />
           <element id="library" level="project" name="slf4j-api-1.7.9-sources" />
+          <element id="library" level="project" name="slf4j-nop-1.7.9" />
         </element>
       </element>
     </root>

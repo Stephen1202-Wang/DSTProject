@@ -38,5 +38,6 @@
     <orderEntry type="library" exported="" name="taglibs-standard-jstlel-1.2.5" level="project" />
     <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
     <orderEntry type="library" exported="" name="slf4j-api-1.7.9-sources" level="project" />
+    <orderEntry type="library" exported="" name="slf4j-nop-1.7.9" level="project" />
   </component>
 </module>
