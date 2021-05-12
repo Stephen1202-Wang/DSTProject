@@ -20,14 +20,14 @@
     <div id="nav">
       <ul class="menu">
         <li class="current_page_item"><a href="continue.do">Home</a></li>
-        <li><a href="match.jsp">Matching</a>
+        <li><a href="match.do">Matching</a>
           <ul class="sub-menu">
-              <li><a href="record.jsp">record</a></li>
+              <li><a href="record.do">record</a></li>
           </ul>
         </li>
-        <li><a href="drug.jsp">Drugs</a></li>
-        <li><a href="druglabel.jsp">Drug labels</a></li>
-        <li><a href="dosage.jsp">Dosing Guideline</a></li>
+        <li><a href="drug.do">Drugs</a></li>
+        <li><a href="druglabel.do">Drug labels</a></li>
+        <li><a href="dosage.do">Dosing Guideline</a></li>
       </ul>
     </div>
   </div>

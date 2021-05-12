@@ -26,8 +26,7 @@ public class loginF extends OncePerRequestFilter{
             key = httpServletRequest.getParameter("key");
         }
         if (name.equals(n) && key.equals(p)){
-            httpServletRequest.setAttribute("name",name);
-            httpServletRequest.setAttribute("key",key);
+
             filterChain.doFilter(httpServletRequest, httpServletResponse);
         }
         else{

@@ -1,5 +1,11 @@
 package com.controller;
 
+import com.bean.DosingGuideline;
+import com.bean.Drug;
+import com.bean.DrugLabel;
+import com.dao.DosingGuidelineDao;
+import com.dao.DrugDao;
+import com.dao.DrugLabelDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,11 +14,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 
 @Controller
 public class HelloController {
-    private static final Logger log = LoggerFactory.getLogger(HelloController.class);
+
+    private static final Logger log = LoggerFactory.getLogger(KnowledgeBaseController.class);
+
+    private DrugDao drugDao = new DrugDao();
+    private DrugLabelDao drugLabelDao = new DrugLabelDao();
+    private DosingGuidelineDao dosingGuidelineDao = new DosingGuidelineDao();
+
     @RequestMapping(value= "/error", method = RequestMethod.GET)
     public String printError(ModelMap model){
         model.remove("message");
@@ -41,8 +54,21 @@ public class HelloController {
         return"index";
     }
     @RequestMapping(value = "/drug")
-    public  String drug(){
-
+    public String drug(HttpServletRequest request){
+        List<Drug> drugs = drugDao.findAll();
+        request.setAttribute("drugs", drugs);
         return "drug";
+    }
+    @RequestMapping(value = "/dosage")
+    public String dosage(HttpServletRequest request){
+        List<DosingGuideline> dosingGuidelines = dosingGuidelineDao.findAll();
+        request.setAttribute("dosingGuidelines", dosingGuidelines);
+        return "dosage";
+    }
+    @RequestMapping(value = "/druglabel")
+    public String druglabel(HttpServletRequest request){
+        List<DrugLabel> drugs = drugLabelDao.findAll();
+        request.setAttribute("drugLabels", drugs);
+        return "druglabel";
     }
 }

@@ -40,5 +40,6 @@
     <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
     <orderEntry type="library" exported="" name="slf4j-api-1.7.9-sources" level="project" />
     <orderEntry type="library" exported="" name="slf4j-nop-1.7.9" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.25" level="project" />
   </component>
 </module>
