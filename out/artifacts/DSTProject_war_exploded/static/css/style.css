@@ -21,7 +21,7 @@ body{
 	font-size:14px;
 }
 table{
-	width: 800px;
+	width: 900px;
 	table-layout:fixed;
 	empty-cells:show;
 	border-collapse: collapse;
@@ -319,7 +319,7 @@ a:hover{
 }
 .table td,.table th{
 	border:1px solid #cad9ea;
-	padding:0 1em 0;
+	padding:0 2em 0;
 }
 .table tr:nth-child(odd) td{
 	background: #cad9ea;

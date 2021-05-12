@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html>
 <head>
     <link rel="stylesheet" href="static/css/style.css" type="text/css"/>
@@ -20,20 +21,40 @@
         <div id="nav">
             <ul class="menu">
                 <li><a href="continue.do">Home</a></li>
-                <li><a href="match.jsp">Matching</a>
+                <li><a href="match.do">Matching</a>
                     <ul class="sub-menu">
-                        <li><a href="record.jsp">record</a></li>
+                        <li><a href="record.do">record</a></li>
                     </ul>
                 </li>
-                <li><a href="drug.jsp">Drugs</a></li>
-                <li><a href="druglabel.jsp">Drug labels</a></li>
-                <li class="current_page_item"><a href="dosage.jsp">Dosing Guideline</a></li>
+                <li><a href="drug.do">Drugs</a></li>
+                <li><a href="druglabel.do">Drug labels</a></li>
+                <li class="current_page_item"><a href="dosage.do">Dosing Guideline</a></li>
             </ul>
         </div>
     </div>
     <div class="page-headline">Dosing Guideline</div>
     <div id="main">
         <div id="content">
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Recommendation</th>
+                    <th>Drug Id</th>
+                    <th>Source</th>
+                    <th>Summary Markdown</th>
+                </tr>
+                <c:forEach items="${dosingGuidelines}" var="item">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.name}</td>
+                        <td>${item.recommendation}</td>
+                        <td>${item.drugId}</td>
+                        <td>${item.source}</td>
+                        <td>${item.summaryMarkdown}</td>
+                    </tr>
+                </c:forEach>
+            </table>
             <div class="post" >
                 <h3 class="post-title"><a href="#">${message}</a></h3>
             </div>

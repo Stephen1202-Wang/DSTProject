@@ -20,7 +20,7 @@ import java.util.List;
 @Controller
 public class HelloController {
 
-    private static final Logger log = LoggerFactory.getLogger(KnowledgeBaseController.class);
+    private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
     private DrugDao drugDao = new DrugDao();
     private DrugLabelDao drugLabelDao = new DrugLabelDao();

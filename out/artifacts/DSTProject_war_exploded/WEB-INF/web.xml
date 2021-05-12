@@ -38,6 +38,12 @@
         <url-pattern>/match.jsp</url-pattern>
         <url-pattern>/record.jsp</url-pattern>
         <url-pattern>/match_result.jsp</url-pattern>
+        <url-pattern>/drug.do</url-pattern>
+        <url-pattern>/dosage.do</url-pattern>
+        <url-pattern>/druglabel.do</url-pattern>
+        <url-pattern>/match.do</url-pattern>
+        <url-pattern>/record.do</url-pattern>
+        <url-pattern>/match_result.do</url-pattern>
         <url-pattern>/register.do</url-pattern>
     </filter-mapping>
 </web-app>
