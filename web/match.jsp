@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html>
 <head>
     <link rel="stylesheet" href="static/css/style.css" type="text/css"/>
@@ -20,7 +21,7 @@
         <div id="nav">
             <ul class="menu">
                 <li><a href="continue.do">Home</a></li>
-                <li class="current_page_item"><a href="match.do">Matching</a>
+                <li class="current_page_item"><a href="match.jsp">Matching</a>
                 <ul class="sub-menu">
                     <li><a href="record.do">record</a></li>
                 </ul>
@@ -34,10 +35,10 @@
     <div class="page-headline">Matching</div>
     <div id="main">
         <div id="content">
-            <div class="post" >
-                <form method="post" action="/TomcatTest/UploadServlet" enctype="multipart/form-data">
+            <div class="post">
+                <form method="post" action="upload.do" enctype="multipart/form-data">
                     <h3 class="post-title">Submit a .tsv file:
-                    <input type="file" name="uploadFile"/>
+                    <input type="file" name="annovar"/>
                     <br/><br/>
                         <input type="submit" value="submit" class="more-link"/></h3>
                 </form>

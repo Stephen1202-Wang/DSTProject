@@ -20,7 +20,7 @@
     <div id="nav">
       <ul class="menu">
         <li class="current_page_item"><a href="continue.do">Home</a></li>
-        <li><a href="match.do">Matching</a>
+        <li><a href="match.jsp">Matching</a>
           <ul class="sub-menu">
               <li><a href="record.do">record</a></li>
           </ul>

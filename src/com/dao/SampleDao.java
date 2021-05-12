@@ -12,13 +12,13 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class SampleDao extends BaseDao {
 
-    public int save(String uploadedBy) {
+    public int save(String name) {
         AtomicInteger key = new AtomicInteger();
         DBUtils.execSQL(connection -> {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("insert into sample(created_at, uploaded_by) values (?,?)", Statement.RETURN_GENERATED_KEYS);
+                PreparedStatement preparedStatement = connection.prepareStatement("insert into sample(created_at, name) values (?,?)", Statement.RETURN_GENERATED_KEYS);
                 preparedStatement.setTimestamp(1, new Timestamp(new Date().getTime()));
-                preparedStatement.setString(2, uploadedBy);
+                preparedStatement.setString(2, name);
                 preparedStatement.executeUpdate();
                 ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
                 while (generatedKeys.next()) {
@@ -40,8 +40,8 @@ public class SampleDao extends BaseDao {
                 while (resultSet.next()) {
                     int sampleId = resultSet.getInt("id");
                     Date createdAt = new Date(resultSet.getTimestamp("created_at").getTime());
-                    String uploadedBy = resultSet.getString("uploaded_by");
-                    Sample sample = new Sample(sampleId, createdAt, uploadedBy);
+                    String name = resultSet.getString("name");
+                    Sample sample = new Sample(sampleId, createdAt, name);
                     samples.add(sample);
                 }
             } catch (SQLException e) {
@@ -55,14 +55,14 @@ public class SampleDao extends BaseDao {
         AtomicReference<Sample> sample = new AtomicReference<>();
         DBUtils.execSQL(connection -> {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("select id, created_at, uploaded_by from sample where id = ?");
+                PreparedStatement preparedStatement = connection.prepareStatement("select id, created_at, name from sample where id = ?");
                 preparedStatement.setInt(1, id);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
                     int sampleId = resultSet.getInt("id");
                     Date createdAt = new Date(resultSet.getTimestamp("created_at").getTime());
-                    String uploadedBy = resultSet.getString("uploaded_by");
-                    sample.set(new Sample(sampleId, createdAt, uploadedBy));
+                    String name = resultSet.getString("name");
+                    sample.set(new Sample(sampleId, createdAt, name));
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

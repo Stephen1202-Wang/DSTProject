@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html>
 <head>
     <link rel="stylesheet" href="static/css/style.css" type="text/css"/>
@@ -20,7 +21,7 @@
         <div id="nav">
             <ul class="menu">
                 <li><a href="continue.do">Home</a></li>
-                <li class="current_page_item"><a href="match.do">Matching</a>
+                <li class="current_page_item"><a href="match.jsp">Matching</a>
                     <ul class="sub-menu">
                         <li><a href="record.do">record</a></li>
                     </ul>
@@ -34,9 +35,23 @@
     <div class="page-headline">Record</div>
     <div id="main">
         <div id="content">
-            <div class="post" >
-                <h3 class="post-title"><a href="#">${message}</a></h3>
-            </div>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Uploaded By</th>
+                    <th>Uploaded At</th>
+                    <th>Action</th>
+                </tr>
+                <c:forEach items="${samples}" var="item" varStatus="loop">
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.name}</td>
+                        <td>${item.createdAt}</td>
+                        <td><a href="match.do?sampleId=${item.id}">matching</a></td>
+                    </tr>
+                </c:forEach>
+
+            </table>
         </div>
     </div>
 </div>

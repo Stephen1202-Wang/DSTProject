@@ -5,15 +5,15 @@ import java.util.Date;
 public class Sample {
     private int id;
     private Date createdAt;
-    private String uploadedBy;
+    private String name;
 
     public Sample() {
     }
 
-    public Sample(int id, Date createdAt, String uploadedBy) {
+    public Sample(int id, Date createdAt, String name) {
         this.id = id;
         this.createdAt = createdAt;
-        this.uploadedBy = uploadedBy;
+        this.name = name;
     }
 
     public int getId() {
@@ -32,11 +32,11 @@ public class Sample {
         this.createdAt = createdAt;
     }
 
-    public String getUploadedBy() {
-        return uploadedBy;
+    public String getName() {
+        return name;
     }
 
-    public void setUploadedBy(String uploadedBy) {
-        this.uploadedBy = uploadedBy;
+    public void setName(String uploadedBy) {
+        this.name = uploadedBy;
     }
 }

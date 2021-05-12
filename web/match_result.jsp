@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page isELIgnored="false" %>
+
 <html>
 <head>
     <link rel="stylesheet" href="static/css/style.css" type="text/css"/>
@@ -20,7 +23,7 @@
         <div id="nav">
             <ul class="menu">
                 <li><a href="continue.do">Home</a></li>
-                <li class="current_page_item"><a href="match.do">Matching</a>
+                <li class="current_page_item"><a href="match.jsp">Matching</a>
                     <ul class="sub-menu">
                         <li><a href="record.do">record</a></li>
                     </ul>
@@ -35,14 +38,26 @@
     <div id="main">
         <div id="content">
             <div class="post" >
-                <form method="post" action="/TomcatTest/UploadServlet" enctype="multipart/form-data">
-                    <h3 class="post-title">Submit a .tsv file:
-                        <input type="file" name="uploadFile"/>
-                        <br/><br/>
-                        <input type="submit" value="submit" class="more-link"/></h3>
-                </form>
-                <h3 class="post-title"><a href="#">${message}</a></h3>
+                <h3 class="post-title"><a href="#">Sample Info #${sample.id}<br>Uploaded at: ${sample.createdAt}<br>Uploaded by: ${sample.name}</a></h3>
             </div>
+            <c:if test="${!matched.isEmpty()}">
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Source</th>
+                        <th>Summary</th>
+                    </tr>
+                    <c:forEach items="${matched}" var="item" varStatus="loop">
+                        <tr>
+                            <td>${loop.index + 1}</td>
+                            <td>${item.name}</td>
+                            <td>${item.source}</td>
+                            <td>${item.summaryMarkdown}</td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </c:if>
         </div>
     </div>
 </div>
