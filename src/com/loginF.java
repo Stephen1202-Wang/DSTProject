@@ -1,5 +1,7 @@
 package com;
 
+import com.bean.User;
+import com.dao.UserDao;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -7,33 +9,45 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class loginF extends OncePerRequestFilter{
-    private String n = "王健强";
-    private String p = "zhenshen";
     private String name = null;
     private String key = null;
+    private UserDao userDao=new UserDao();
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
         if (httpServletRequest.getServletPath().equals("/register.do")) {
-            n = httpServletRequest.getParameter("name");
-            p = httpServletRequest.getParameter("key");
+             User user=new User();
+             name=httpServletRequest.getParameter("name");
+             key=httpServletRequest.getParameter("key");
+             user.setUsername(name);
+             user.setKey_value(key);
+             userDao.saveUser(user);
         }
-        if (name == null) {
+        boolean connected=false;
+        if (httpServletRequest.getParameter("name")!=null) {
             name = httpServletRequest.getParameter("name");
         }
-        if (key == null){
+        if (httpServletRequest.getParameter("key")!=null){
             key = httpServletRequest.getParameter("key");
         }
-        if (name.equals(n) && key.equals(p)){
-
-            filterChain.doFilter(httpServletRequest, httpServletResponse);
+        List<User> users= userDao.findAll();
+        //users.stream().forEach(x -> {
+        for (User x : users) {
+            if (name.equals(x.getUsername()) && key.equals(x.getKey_value())) {
+                connected = true;
+            }
         }
-        else{
+        if (!connected) {
             name = null;
             key = null;
             httpServletResponse.sendRedirect("error.do");
+        } else {
+            connected=false;
+            filterChain.doFilter(httpServletRequest, httpServletResponse);
         }
     }
+
 }
 

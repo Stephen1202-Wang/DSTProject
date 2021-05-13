@@ -34,7 +34,6 @@ public class HelloController {
     private AnnovarDao annovarDao = new AnnovarDao();
     private String name;
 
-
     @RequestMapping(value= "/error", method = RequestMethod.GET)
     public String printError(ModelMap model){
         model.remove("message");
