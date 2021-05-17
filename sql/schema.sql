@@ -215,6 +215,6 @@ create table sample
     id int auto_increment
         primary key,
     created_at datetime null,
-    uploaded_by text null
+    name text null
 );
 
