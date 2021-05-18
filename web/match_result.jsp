@@ -37,8 +37,9 @@
     <div class="page-headline">Matching</div>
     <div id="main">
         <div id="content">
-            <div class="post" >
+            <div class="post">
                 <h3 class="post-title"><a href="#">Sample Info #${sample.id}<br>Uploaded at: ${sample.createdAt}<br>Uploaded by: ${sample.name}</a></h3>
+                <br>
             </div>
             <c:if test="${!matched.isEmpty()}">
                 <table class="table">
@@ -58,7 +59,14 @@
                     </c:forEach>
                 </table>
             </c:if>
+            <c:if test="${matched.isEmpty()}">
+                <h3 class="post-title"><a href="#">There is no proper drug for you. Please consult you doctor for further help.</a></h3>
+            </c:if>
         </div>
+        <br>
+        <form action ="record.do">
+            <input type="submit" value="return" class="more-link"/>
+        </form>
     </div>
 </div>
 </body>

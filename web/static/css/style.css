@@ -323,9 +323,11 @@ a:hover{
 }
 .table tr:nth-child(odd) td{
 	background: #cad9ea;
+	border:1px solid #F8F8F8;
 }
 .table tr:nth-child(even) td{
 	background:#F8F8F8;
+	border:1px solid #cad9ea;
 }
 
 /* ---------- */
