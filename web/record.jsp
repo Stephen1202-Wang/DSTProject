@@ -37,7 +37,7 @@
         <div id="content">
             <table class="table">
                 <tr>
-                    <th>#</th>
+                    <th>Upload ID</th>
                     <th>Uploaded By</th>
                     <th>Uploaded At</th>
                     <th>Action</th>

@@ -35,7 +35,7 @@ public class SampleDao extends BaseDao {
         List<Sample> samples = new ArrayList<>();
         DBUtils.execSQL(connection -> {
             try {
-                PreparedStatement preparedStatement = connection.prepareStatement("select * from sample");
+                PreparedStatement preparedStatement = connection.prepareStatement("select * from sample order by id DESC");
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     int sampleId = resultSet.getInt("id");

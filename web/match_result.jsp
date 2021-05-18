@@ -44,7 +44,7 @@
             <c:if test="${!matched.isEmpty()}">
                 <table class="table">
                     <tr>
-                        <th>#</th>
+                        <th>Drug ID</th>
                         <th>Name</th>
                         <th>Source</th>
                         <th>Summary</th>

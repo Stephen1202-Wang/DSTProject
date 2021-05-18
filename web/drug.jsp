@@ -39,7 +39,7 @@
         <div id="content">
             <table class="table">
                 <tr>
-                    <th>#</th>
+                    <th>Drug ID</th>
                     <th>Name</th>
                     <th>Drug Url</th>
                     <th>Biomarker</th>

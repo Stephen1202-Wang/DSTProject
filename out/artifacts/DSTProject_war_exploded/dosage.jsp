@@ -37,7 +37,7 @@
         <div id="content">
             <table class="table">
                 <tr>
-                    <th>#</th>
+                    <th>Variant ID</th>
                     <th>Name</th>
                     <th>Recommendation</th>
                     <th>Drug Id</th>

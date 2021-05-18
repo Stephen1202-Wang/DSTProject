@@ -315,11 +315,11 @@ a:hover{
 }
 .table th {
 	background-repeat:repeat-x;
+	border:1px solid #cad9ea;
 	height:30px;
 }
 .table td,.table th{
-	border:1px solid #cad9ea;
-	padding:0 2em 0;
+	padding:0 2.5em 0;
 }
 .table tr:nth-child(odd) td{
 	background: #cad9ea;
