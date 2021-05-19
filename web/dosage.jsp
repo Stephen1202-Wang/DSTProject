@@ -56,7 +56,7 @@
                 </c:forEach>
             </table>
             <div class="post" >
-                <h3 class="post-title"><a href="#">${message}</a></h3>
+                <h3 class="post-title">${message}</h3>
             </div>
         </div>
     </div>

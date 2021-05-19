@@ -38,7 +38,7 @@
     <div id="main">
         <div id="content">
             <div class="post">
-                <h3 class="post-title"><a href="#">Sample Info #${sample.id}<br>Uploaded at: ${sample.createdAt}<br>Uploaded by: ${sample.name}</a></h3>
+                <h3 class="post-title">Sample Info #${sample.id}<br>Uploaded at: ${sample.createdAt}<br>Uploaded by: ${sample.name}</h3>
                 <br>
             </div>
             <c:if test="${!matched.isEmpty()}">
@@ -60,7 +60,7 @@
                 </table>
             </c:if>
             <c:if test="${matched.isEmpty()}">
-                <h3 class="post-title"><a href="#">There is no proper drug for you. Please consult you doctor for further help.</a></h3>
+                <h3 class="post-title">There is no proper drug for you. Please consult you doctor for further help.</h3>
             </c:if>
         </div>
         <br>

@@ -42,7 +42,7 @@
                     <br/><br/>
                         <input type="submit" value="submit" class="more-link"/></h3>
                 </form>
-                <h3 class="post-title"><a href="#">${message}</a></h3>
+                <h3 class="post-title">${message}</h3>
             </div>
         </div>
     </div>
