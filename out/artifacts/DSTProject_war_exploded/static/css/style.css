@@ -10,7 +10,7 @@ URL:http://www.chris-creed.com
 /* -- General Styles -- */
 /* -------------------- */
 #wrap{
-	width:960px;
+	width:1060px;
 	margin:0 auto;
 }
 body{
@@ -305,8 +305,8 @@ a:hover{
 }
 #content{
 	float:left;
-	width:960px;
-	padding:0 165px 0 0;
+	width:1060px;
+	padding:0 200px 0 0;
 }
 
 .table{
