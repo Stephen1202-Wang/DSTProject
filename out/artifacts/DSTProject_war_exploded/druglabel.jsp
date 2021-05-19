@@ -37,7 +37,7 @@
         <div id="content">
             <table class="table">
                 <tr>
-                    <th>#</th>
+                    <th>Drug Label ID</th>
                     <th>Source</th>
                     <th>Dosing Information</th>
                     <th>Summary Markdown</th>

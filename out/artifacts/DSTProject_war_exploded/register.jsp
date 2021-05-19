@@ -12,9 +12,8 @@
     <title>register</title>
 </head>
 <body>
-<form action = "register.do">
-    <div class="form-wrapper">
-
+<div class="form-wrapper">
+    <form action = "register.do">
         <div class="header">
             register
         </div>
@@ -30,7 +29,10 @@
         <div class="action">
             <input type = "submit" value= "register" class = "btn">
         </div>
+    </form>
+    <div class = "action">
+        <div class = "error">${message}</div>
     </div>
-</form>
+</div>
 </body>
 </html>
