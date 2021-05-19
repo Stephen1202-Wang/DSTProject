@@ -40,6 +40,12 @@ public class HelloController {
         model.addAttribute("message","Incorrect username or password!");
         return "login";
     }
+    @RequestMapping(value= "/error2", method = RequestMethod.GET)
+    public String Error(ModelMap model){
+        model.remove("message");
+        model.addAttribute("message","This username has been registered!");
+        return "register";
+    }
     @RequestMapping(value = "/index")
     public String login (HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, ModelMap model){
         name = httpServletRequest.getParameter("name");

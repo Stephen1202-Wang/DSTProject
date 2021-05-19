@@ -21,33 +21,42 @@ public class loginF extends OncePerRequestFilter{
              User user=new User();
              name=httpServletRequest.getParameter("name");
              key=httpServletRequest.getParameter("key");
+             List<User> users = userDao.findAll();
+             for (User i :users){
+                 if (i.getUsername().equals(name)){
+                     httpServletResponse.sendRedirect("error2.do");
+                     break;
+                 }
+             }
              user.setUsername(name);
              user.setKey_value(key);
              userDao.saveUser(user);
+             filterChain.doFilter(httpServletRequest, httpServletResponse);
         }
-        boolean connected=false;
-        if (httpServletRequest.getParameter("name")!=null) {
-            name = httpServletRequest.getParameter("name");
-        }
-        if (httpServletRequest.getParameter("key")!=null){
-            key = httpServletRequest.getParameter("key");
-        }
-        List<User> users= userDao.findAll();
-        //users.stream().forEach(x -> {
-        for (User x : users) {
-            if (name.equals(x.getUsername()) && key.equals(x.getKey_value())) {
-                connected = true;
+        else{
+            boolean connected=false;
+            if (httpServletRequest.getParameter("name")!=null) {
+                name = httpServletRequest.getParameter("name");
+            }
+            if (httpServletRequest.getParameter("key")!=null){
+                key = httpServletRequest.getParameter("key");
+            }
+            List<User> users= userDao.findAll();
+            //users.stream().forEach(x -> {
+            for (User x : users) {
+                if (name.equals(x.getUsername()) && key.equals(x.getKey_value())) {
+                    connected = true;
+                    break;
+                }
+            }
+            if (!connected) {
+                name = null;
+                key = null;
+                httpServletResponse.sendRedirect("error.do");
+            } else {
+                filterChain.doFilter(httpServletRequest, httpServletResponse);
             }
         }
-        if (!connected) {
-            name = null;
-            key = null;
-            httpServletResponse.sendRedirect("error.do");
-        } else {
-            connected=false;
-            filterChain.doFilter(httpServletRequest, httpServletResponse);
-        }
     }
-
 }
 
